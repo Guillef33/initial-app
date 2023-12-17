@@ -3,23 +3,17 @@
 import { useThemeContext } from "@/providers/index";
 
 function Dashboard() {
-  const { ingreso } = useThemeContext();
+  const { ingreso, gasto, totalIngresos, totalGastos } = useThemeContext();
+
+  const ingresosTotales = totalIngresos();
+  const gastosTotales = totalGastos();
 
   return (
-    <div>
-      <h2>Estos son los ingresos de este mes</h2>
-
-      {ingreso.map((item) => {
-        console.log(item);
-        return (
-          <>
-            <p>{item.name}</p>
-            <p>{item.categoria}</p>
-            <p>{item.monto}</p>
-          </>
-        );
-      })}
-    </div>
+    <>
+      <div>La totalidad de tu ingreso es de: {ingresosTotales}</div>
+      <div>La totalidad de tu gasto es de: {gastosTotales}</div>
+      <div>Tu balance es de {ingresosTotales - gastosTotales}</div>
+    </>
   );
 }
 

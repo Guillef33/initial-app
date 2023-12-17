@@ -2,17 +2,19 @@
 import Link from "next/link";
 import { useThemeContext } from "@/providers/index";
 
-function Ingresos() {
-  const { ingreso, totalIngresos } = useThemeContext();
+function Gastos() {
+  const { gasto, totalGastos } = useThemeContext();
 
-  const ingresosTotales = totalIngresos();
+  const gastosTotales = totalGastos();
+
+  let total = localStorage.getItem("gasto");
 
   return (
     <>
       <div>
         <h2>Estos son los ingresos de este mes</h2>
         <div className="grid grid-cols-3">
-          {ingreso.map((item) => {
+          {gasto.map((item) => {
             return (
               <div className="flex flex-col">
                 <p>{item.name}</p>
@@ -23,14 +25,14 @@ function Ingresos() {
           })}
         </div>
         <div>
-          <h2> La totalidad de tu ingreso es de: {ingresosTotales}</h2>
+          <h2> La totalidad de tu gasto es de: {total}</h2>
         </div>
         <div className="mt-6">
           <Link
-            href="ingresos/agregarIngreso"
+            href="gastos/agregarGasto"
             className="rounded bg-blue-700 text-white p-2"
           >
-            Agregar nuevo ingreso
+            Agregar nuevo gasto
           </Link>
         </div>
       </div>
@@ -38,4 +40,4 @@ function Ingresos() {
   );
 }
 
-export default Ingresos;
+export default Gastos;
