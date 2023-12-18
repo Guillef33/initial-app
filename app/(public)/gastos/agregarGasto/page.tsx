@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FormGastos } from "@/components/formularios/ingresos/FormGastos";
+import { FormGastos } from "@/components/formularios/gastos/FormGastos";
 
 export const metadata = {
   title: "Gastos Page",
