@@ -7,7 +7,7 @@ function Gastos() {
 
   const gastosTotales = totalGastos();
 
-  let total = localStorage.getItem("gasto");
+  //  let total = localStorage.getItem("gasto");
 
   return (
     <>
@@ -25,7 +25,7 @@ function Gastos() {
           })}
         </div>
         <div>
-          <h2> La totalidad de tu gasto es de: {total}</h2>
+          <h2> La totalidad de tu gasto es de: {gastosTotales}</h2>
         </div>
         <div className="mt-6">
           <Link

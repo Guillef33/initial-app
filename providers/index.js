@@ -26,12 +26,12 @@ export const ThemeProvider = ({ children }) => {
   const agregarGasto = (nuevoGasto) => {
     setGasto([...gasto, nuevoGasto]);
     const total = totalGastos();
-    localStorage.setItem("gasto", total);
+  // localStorage.setItem("gasto", total);
   };
 
   const totalGastos = () => {
-    let total = localStorage.getItem("gasto");
-    console.log(total);
+     let total = 0;
+    // console.log(total);
 
     gasto.map((unidad) => {
       total = total + parseInt(unidad.monto);
@@ -42,7 +42,6 @@ export const ThemeProvider = ({ children }) => {
     return total;
   };
 
-  const saveToLocalStorage = () => {};
 
   return (
     <ThemeContext.Provider
