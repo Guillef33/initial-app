@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FormGastos } from "@/components/formularios/ingresos/FormGastos";
 
 export const metadata = {
-  title: "Ingresos Page",
+  title: "Gastos Page",
   description: "Vamos con Fernando para aprender bien Next",
 };
 

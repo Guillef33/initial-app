@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export const FormIngresos = () => {
+export const FormGastos = () => {
 
   const [titulo, setTitulo] = useState("");
   const [categoria, setCategoria] = useState("");
@@ -11,7 +11,7 @@ export const FormIngresos = () => {
 
   const router = useRouter();
 
-  const crearIngreso = async (e) => {
+  const crearGasto = async (e) => {
     e.preventDefault();
 
     if (!titulo || !categoria || !monto) {
@@ -20,7 +20,7 @@ export const FormIngresos = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/ingresos", {
+      const res = await fetch("http://localhost:3000/api/gastos", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -29,9 +29,9 @@ export const FormIngresos = () => {
       });
 
       if (res.ok) {
-        router.push("/ingresos");
+        router.push("/gastos");
       } else {
-        throw new Error("Failed to create a ingreso");
+        throw new Error("Failed to create a gastos");
       }
     } catch (error) {
       console.log(error);
@@ -40,7 +40,7 @@ export const FormIngresos = () => {
 
   return (
     <div>
-      <form className="flex flex-col" onSubmit={crearIngreso}>
+      <form className="flex flex-col" onSubmit={crearGasto}>
         <label className="pt-2">Ingrese su titulo</label>
         <input
           type="text"
