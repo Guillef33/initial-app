@@ -8,11 +8,6 @@ function Dashboard() {
   const ingresosTotales = totalIngresos();
   const gastosTotales = totalGastos();
 
-  const ingresosSegunMes = (mes) => {
-    
-
-  }
-
   return (
     <>
       <div>La totalidad de tu ingreso es de: {ingresosTotales}</div>
@@ -31,9 +26,8 @@ function Dashboard() {
         </thead>
         <tbody>
           <tr>
-            
-            {ingreso.map(i => {
-                <th>{i.fecha}</th>
+            {ingreso.map((i) => {
+              <th>{i.fecha}</th>;
             })}
 
             <th>4000</th>

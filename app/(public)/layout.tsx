@@ -1,11 +1,16 @@
+"use client";
+
 import { DashboardLink } from "@/components/dashboard/dashboardLinks";
 import { dashboardItems } from "@/components/dashboard/dashboardItems";
+import { useSession } from "next-auth/react";
 
 export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { data: session } = useSession();
+
   return (
     <div className="bg-slate-100 overflow-y-scroll w-screen h-screen antialiased text-slate-300 selection:bg-blue-600 selection:text-white">
       <div className="flex">
@@ -32,7 +37,7 @@ export default function DashboardLayout({
                 />
               </span>
               <span className="text-sm md:text-base font-bold">
-                Gullermo Flores
+                {session?.user?.name}
               </span>
             </a>
           </div>

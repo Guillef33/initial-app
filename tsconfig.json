@@ -24,6 +24,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "providers/index.js", "database/connection/mongodb.js", "app/api/ingresos/[id]/route.js", "app/api/ingresos/route.js", "components/ingresos/IngresosList.js", "app/(public)/gastos/editarGasto/[id]/page.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "providers/index.js", "database/connection/mongodb.js", "app/api/ingresos/[id]/route.js", "app/api/ingresos/route.js", "components/ingresos/IngresosList.js", "app/(public)/gastos/editarGasto/[id]/page.js", "app/Providers.tsx", "components/calculadora/calculoInteres.js"],
   "exclude": ["node_modules"]
 }

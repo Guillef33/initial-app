@@ -1,5 +1,11 @@
+import LogoutButton from "@/components/auth/Buttons/SignOutButton";
+
 function AjustesPage() {
-  return <div>Ajuste </div>;
+  return (
+    <div>
+      <LogoutButton />{" "}
+    </div>
+  );
 }
 
 export default AjustesPage;

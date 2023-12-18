@@ -1,9 +1,10 @@
 import "./globals.css";
 import { ThemeProvider } from "@/providers/index";
+import { AuthProvider } from "./Providers";
 
 export const metadata = {
-  title: "Curso Next.js por Fernando Herrera",
-  description: "Vamos con Fernando para aprender bien Next",
+  title: "App de ingresos y gastos",
+  description: "Mejora el control de tus finanzasVamos con Fernando para aprender bien Next",
 };
 
 export default function RootLayout({
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );
