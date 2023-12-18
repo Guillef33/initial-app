@@ -3,14 +3,14 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export const FormIngresos = () => {
+export const FormEditarGastos = () => {
   const [titulo, setTitulo] = useState("");
   const [categoria, setCategoria] = useState("");
   const [monto, setMonto] = useState("");
 
   const router = useRouter();
 
-  const crearIngreso = async (e) => {
+  const editarGasto = async (e) => {
     e.preventDefault();
 
     if (!titulo || !categoria || !monto) {
@@ -19,21 +19,18 @@ export const FormIngresos = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/ingresos", {
-        method: "POST",
+      const res = await fetch("http://localhost:3000/api/gastos", {
+        method: "UPDATE",
         headers: {
           "Content-type": "application/json",
         },
         body: JSON.stringify({ titulo, categoria, monto }),
       });
 
-      console.log(res);
-      console.log(JSON.stringify({ titulo, categoria, monto }));
-
       if (res.ok) {
-        router.push("/ingresos");
+        router.push("/gastos");
       } else {
-        throw new Error("Failed to create a ingreso");
+        throw new Error("Failed to create a gastos");
       }
     } catch (error) {
       console.log(error);
@@ -42,7 +39,7 @@ export const FormIngresos = () => {
 
   return (
     <div>
-      <form className="flex flex-col" onSubmit={crearIngreso}>
+      <form className="flex flex-col" onSubmit={editarGasto}>
         <label className="pt-2">Ingrese su titulo</label>
         <input
           type="text"

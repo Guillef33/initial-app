@@ -1,12 +1,10 @@
-"use client";
 import Link from "next/link";
-import { useThemeContext } from "@/providers/index";
+// import { useThemeContext } from "@/providers/index";
+import GastosList from "@/components/gastos/gastosList";
 
 function Gastos() {
-  const { gasto, totalGastos } = useThemeContext();
-
-  const gastosTotales = totalGastos();
-
+  // const { gasto, totalGastos } = useThemeContext();
+  // const gastosTotales = totalGastos();
   //  let total = localStorage.getItem("gasto");
 
   return (
@@ -14,18 +12,10 @@ function Gastos() {
       <div>
         <h2>Estos son los ingresos de este mes</h2>
         <div className="grid grid-cols-3">
-          {gasto.map((item) => {
-            return (
-              <div className="flex flex-col">
-                <p>{item.name}</p>
-                <p>{item.categoria}</p>
-                <p>{item.monto}</p>
-              </div>
-            );
-          })}
+          <GastosList />
         </div>
         <div>
-          <h2> La totalidad de tu gasto es de: {gastosTotales}</h2>
+          <h2> La totalidad de tu gasto es de: 0</h2>
         </div>
         <div className="mt-6">
           <Link

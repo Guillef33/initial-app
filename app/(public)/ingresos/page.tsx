@@ -8,7 +8,6 @@ function Ingresos() {
       <div>
         <div>
         {/* @ts-expect-error Server Component */}
-        <IngresosList />
         </div>
         <div className="mt-6">
           <Link

@@ -3,7 +3,7 @@ import { FormIngresos } from "@/components/formularios/ingresos/formIngresos";
 
 export const metadata = {
   title: 'Ingresos Page',
-  description: 'Vamos con Fernando para aprender bien Next',
+  description: 'El lugar donde ingresas tus ingresos',
 }
 
 

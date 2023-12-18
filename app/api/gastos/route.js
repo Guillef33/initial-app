@@ -9,3 +9,15 @@ export async function POST(request) {
   return NextResponse.json({ message: "Gasto Creado" }, { status: 201 });
 }
 
+export async function GET() {
+  await connectMongoDB();
+  const gastos = await Gasto.find();
+  return NextResponse.json({ gastos });
+}
+
+export async function DELETE(request) {
+  const id = request.nextUrl.searchParams.get("id");
+  await connectMongoDB();
+  await Gasto.findByIdAndDelete(id);
+  return NextResponse.json({ message: "Gasto deleted" }, { status: 200 });
+}
